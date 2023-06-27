@@ -1,3 +1,21 @@
+// let button = document.querySelector('#button-movil');
+// let mostrarMenu = document.querySelector('#navegacion-principal');
+
+// button = addEventListener ('click', clickbutton);
+
+// function clickbutton() {
+
+//     let buttonPresionar = true;
+    
+//     if (buttonPresionar) {
+//         mostrarMenu.style.display = 'block';
+//         buttonPresionar = false;
+//     } else {
+//         mostrarMenu.style.display = 'none';
+//     }
+//     console.log(mostrarMenu)
+// }
+
 //Campo Datos Usuario
 
 let nombre = document.querySelector('#nombre');
@@ -22,9 +40,20 @@ let sumaTotal = document.querySelector('#suma-total');
 let regalo = document.querySelector('#regalo');
 
 
-//Calculando con 'Boton Calcular'
+paseDia.addEventListener('blur', mostrarDias);
+paseCompleto.addEventListener('blur', mostrarDias);
+paseDosDias.addEventListener('blur', mostrarDias);
+
+// nombre.addEventListener('blur', function() {
+//     if(this.value == '') {
+//         errorDiv.style.display = 'block';
+//         errorDiv.innerHTML = "Este campo es Obligatorio";
+//     }
+// })
 
 calcular.addEventListener('click', () => {
+
+    //Calculando el total y resumen con 'Boton Calcular'
 
     if (regalo.value === '') {
         alert("Debes elegir un regalo");
@@ -80,9 +109,10 @@ calcular.addEventListener('click', () => {
             listaProductos.innerHTML += listadoProductos[i] + '<br/>';
         }
 
+        //suma Total
+        sumaTotal.innerHTML = '$' + totalPagar.toFixed(2);
+
     }
-
-
 
 
 });
@@ -93,3 +123,25 @@ calcular.addEventListener('click', () => {
 
 
 //Funciones
+
+function mostrarDias(){
+    let boletosDia = parseInt(paseDia.value, 10);
+    let boletos2Dias = parseInt(paseDosDias.value, 10);
+    let boletoCompleto = parseInt(paseCompleto.value, 10);
+
+    let diasElegidos = [];
+
+    if (boletosDia > 0) {
+        diasElegidos.push('viernes');
+    }
+    if (boletos2Dias > 0) {
+        diasElegidos.push('viernes','sabado');
+    }
+    if (boletoCompleto > 0) {
+        diasElegidos.push('viernes','sabado','domingo');
+    }
+
+    // for (let i = 0; i < diasElegidos.length; i++) {
+    //     document.getElementById(diasElegidos[i]).style.display = 'block';
+    // }
+};

@@ -655,7 +655,6 @@ div.paquetes .tabla-precios input {
 }
 
 .contenido-dia {
-    /* display: none; */
     padding: 20px;
 }
 
@@ -722,6 +721,20 @@ div.total p {
     margin: 15px 0;
 }
 
+#suma-total {
+    margin-bottom: 10px;
+    background-color: #E1E1E1;
+    margin: 0 auto 15px auto;
+    width: 50%;
+}
+
+#lista-productos {
+    width: 50%;
+    text-align: left;
+    margin: 0 auto;
+    background-color: #E1E1E1;
+}
+
 
 
 
@@ -786,7 +799,7 @@ div.total p {
 
     .navegacion-principal {
         margin: 0 auto;
-        display: none;
+        /* display: none; */
     }
 
     nav.navegacion-principal a{
